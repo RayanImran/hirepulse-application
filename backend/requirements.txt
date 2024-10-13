@@ -1,0 +1,14 @@
+django
+djangorestframework
+django-cors-headers
+langchain
+langchain_community
+langchain_groq
+langchain_core
+chromadb==0.5.3
+pandas
+python-dotenv
+uuid
+PyPDF2
+plotly
+scikit-learn
