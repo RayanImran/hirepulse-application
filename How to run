@@ -1,0 +1,9 @@
+cd frontend
+- npm install 
+- npm run dev
+
+for backend:
+
+cd backend/myproject
+- pip install -r requirements.txt
+- python manage.py runserver
