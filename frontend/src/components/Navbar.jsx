@@ -3,34 +3,52 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav className="navbar">
-      <div className="container">
-        <Link to="/" className="navbar-brand">
-          <img src="/assets/logo.png" alt="Your Logo" />
+    <nav className="bg-white shadow-lg">
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+        <Link to="/" className="flex items-center">
+          <img src="/assets/logo.png" alt="Your Logo" className="h-10" />
         </Link>
-        <ul className="navbar-menu">
+        <ul className="flex space-x-6">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" className="text-gray-800 hover:text-yellow-500">
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/features">Features</Link>
+            <Link
+              to="/features"
+              className="text-yellow-800 hover:text-blue-500"
+            >
+              Features
+            </Link>
           </li>
           <li>
-            <Link to="/pricing">Pricing</Link>
+            <Link to="/pricing" className="text-gray-800 hover:text-blue-500">
+              Pricing
+            </Link>
           </li>
           <li>
-            <Link to="/about">About Us</Link>
+            <Link to="/about" className="text-gray-800 hover:text-blue-500">
+              About Us
+            </Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact" className="text-gray-800 hover:text-blue-500">
+              Contact
+            </Link>
           </li>
         </ul>
-        <ul className="navbar-auth">
+        <ul className="flex space-x-4">
           <li>
-            <Link to="/login">Login</Link>
+            <Link to="/login" className="text-gray-800 hover:text-blue-500">
+              Login
+            </Link>
           </li>
           <li>
-            <Link to="/signup" className="btn btn-primary">
+            <Link
+              to="/signup"
+              className=" text-white px-4 py-2 rounded-md hover:bg-blue-600"
+            >
               Sign Up
             </Link>
           </li>
