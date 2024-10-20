@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import JobDescriptionInput from "./InputUser/JobDescriptionInput.jsx";
+import ResumeUploadInput from "./InputUser/ResumeUploadInput.jsx";
 
 function ColdEmailForm({ setResponseData }) {
   const [jobDescription, setJobDescription] = useState("");
@@ -19,6 +21,7 @@ function ColdEmailForm({ setResponseData }) {
       alert("Please provide both job description and resume.");
       return;
     }
+
     const formData = new FormData();
     formData.append("job_description", jobDescription);
     formData.append("resume", resume);
@@ -38,24 +41,11 @@ function ColdEmailForm({ setResponseData }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label>Enter the Job Description:</label>
-        <textarea
-          value={jobDescription}
-          onChange={handleJobDescriptionChange}
-          rows={10}
-          style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
-        />
-      </div>
-      <div>
-        <label>Upload a PDF resume:</label>
-        <input
-          type="file"
-          accept="application/pdf"
-          onChange={handleResumeChange}
-          style={{ marginBottom: "10px" }}
-        />
-      </div>
+      <JobDescriptionInput
+        jobDescription={jobDescription}
+        handleJobDescriptionChange={handleJobDescriptionChange}
+      />
+      <ResumeUploadInput handleResumeChange={handleResumeChange} />
       <button type="submit">Submit</button>
     </form>
   );

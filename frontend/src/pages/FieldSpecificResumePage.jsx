@@ -1,5 +1,5 @@
 import React from "react";
-import FieldSpecificResume from "../components/FieldSpecificResume";
+import FieldSpecificResume from "../components/FieldSpecificResume/FieldSpecificResume.jsx";
 
 function FieldSpecificResumePage() {
   return (
