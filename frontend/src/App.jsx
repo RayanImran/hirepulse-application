@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Features from "./pages/Features";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
+import FieldSpecificResumePage from "./pages/FieldSpecificResumePage";
 
 function App() {
   return (
@@ -17,6 +18,10 @@ function App() {
         <Route path="/features" element={<Features />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/contact" element={<Contact />} />
+        <Route
+          path="/field-specific-resume"
+          element={<FieldSpecificResumePage />}
+        />
       </Routes>
     </Router>
   );

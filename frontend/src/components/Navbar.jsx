@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+
   return (
     <nav className="bg-white shadow-lg">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
@@ -32,10 +38,49 @@ function Navbar() {
               About Us
             </Link>
           </li>
-          <li>
-            <Link to="/contact" className="text-gray-800 hover:text-blue-500">
-              Contact
-            </Link>
+          <li className="relative">
+            <button
+              onClick={toggleDropdown}
+              className="text-gray-800 hover:text-blue-500 focus:outline-none"
+            >
+              Tools
+            </button>
+            {dropdownOpen && (
+              <ul className="absolute left-0 mt-2 py-2 w-48 bg-white shadow-lg border rounded">
+                <li>
+                  <Link
+                    to="/resume-optimizer"
+                    className="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white"
+                  >
+                    Resume Optimizer
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/job-fit"
+                    className="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white"
+                  >
+                    Job Fit Analyzer
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/field-specific-resume"
+                    className="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white"
+                  >
+                    Field-Specific Resume Optimization
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/interview-practice"
+                    className="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white"
+                  >
+                    Interview Practice
+                  </Link>
+                </li>
+              </ul>
+            )}
           </li>
         </ul>
         <ul className="flex space-x-4">
@@ -47,7 +92,7 @@ function Navbar() {
           <li>
             <Link
               to="/signup"
-              className=" text-white px-4 py-2 rounded-md hover:bg-blue-600"
+              className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
             >
               Sign Up
             </Link>
